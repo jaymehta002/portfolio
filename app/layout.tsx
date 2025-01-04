@@ -16,16 +16,31 @@ export const metadata: Metadata = {
    metadataBase: new URL(DATA.url),
    title: {
       default: DATA.name,
-      template: `%s | ${DATA.name}`,
+      template: `%s | ${DATA.name} - Full Stack Developer`,
    },
    description: DATA.description,
+   keywords: [
+      'Full Stack Developer',
+      'Web Development',
+      ...DATA.skills,
+   ],
+   authors: [{ name: DATA.name }],
+   creator: DATA.name,
    openGraph: {
-      title: `${DATA.name}`,
+      title: DATA.name,
       description: DATA.description,
       url: DATA.url,
-      siteName: `${DATA.name}`,
+      siteName: DATA.name,
       locale: 'en_US',
       type: 'website',
+      images: [
+         {
+            url: DATA.avatarUrl,
+            width: 800,
+            height: 800,
+            alt: DATA.name,
+         },
+      ],
    },
    robots: {
       index: true,
@@ -39,8 +54,14 @@ export const metadata: Metadata = {
       },
    },
    twitter: {
-      title: `${DATA.name}`,
       card: 'summary_large_image',
+      title: DATA.name,
+      description: DATA.description,
+      creator: '@jaymehta002',
+      images: [DATA.avatarUrl],
+   },
+   alternates: {
+      canonical: DATA.url,
    },
    verification: {
       google: '',
