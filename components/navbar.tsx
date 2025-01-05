@@ -33,6 +33,7 @@ export default function Navbar() {
                                  buttonVariants({ variant: 'ghost', size: 'icon' }),
                                  'size-12',
                               )}
+                              download={item.download}
                            >
                               <item.icon className="size-4" />
                            </Link>
