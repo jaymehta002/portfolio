@@ -6,6 +6,7 @@ import { TooltipProvider } from "../components/ui/tooltip";
 import { DATA } from "../data/resume";
 import { ny } from "../lib/utils";
 import "../styles/globals.css";
+import Script from "next/script";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -100,6 +101,19 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth" lang="en" suppressHydrationWarning>
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TPKRTF26CV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-TPKRTF26CV');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
