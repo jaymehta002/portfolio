@@ -169,12 +169,12 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://burn.fm/",
+          href: "https://www.tempounionleh.com/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/burnfm.png",
-      video: "",
+      image: "",
+      video: "/tempo-admin.webm",
     },
     {
       title: "Authcraft",

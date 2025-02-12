@@ -7,11 +7,13 @@ import { ResumeCard } from "../components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Badge } from "../components/ui/badge";
 import { DATA } from "../data/resume";
+import { WorldMapDemo } from "~/components/test";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
+
     <main className="flex min-h-dvh flex-col space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
@@ -153,6 +155,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <WorldMapDemo />
       <section id="contact" className="relative">
         <div className="mx-auto max-w-5xl px-4 py-16">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
@@ -215,6 +218,7 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+
     </main>
   );
 }
