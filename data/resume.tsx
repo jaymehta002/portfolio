@@ -156,8 +156,8 @@ export const DATA = {
           icon: "<Icons.globe className='size-3' />"
         }
       ],
-      image: "/gwp.png",
-      video: ""
+      image: "",
+      video: "/gwp.mp4"
     },    
     {
       title: "Burn.fm",
