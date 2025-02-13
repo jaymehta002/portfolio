@@ -134,6 +134,32 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "GWP",
+      href: "https://www.dev.joingwp.com",
+      dates: "May 2024 - Dec 2024",
+      active: true,
+      description: "GWP is a growing wealth platform designed to enhance financial asset management, accelerate debt repayment, and improve investment strategies. It provides users with smart financial tools, insights, and integrations for better financial control.",
+      technologies: [
+        "Next.js",
+        "Prisma",
+        "PostgreSQL",
+        "Stripe",
+        "TailwindCSS",
+        "Canvas",
+        "Plaid",
+        "framer-motion"
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.dev.joingwp.com",
+          icon: "<Icons.globe className='size-3' />"
+        }
+      ],
+      image: "/gwp.png",
+      video: ""
+    },    
+    {
       title: "Burn.fm",
       href: "https://www.burn.fm",
       dates: "Nov 2024 - Dec 2024",
