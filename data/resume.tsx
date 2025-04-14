@@ -153,7 +153,7 @@ export const DATA = {
         {
           type: "Website",
           href: "https://www.dev.joingwp.com",
-          icon: "<Icons.globe className='size-3' />"
+          icon: <Icons.globe className="size-3" />,
         }
       ],
       image: "",
