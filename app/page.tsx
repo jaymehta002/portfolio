@@ -1,22 +1,29 @@
 
 import { WhatIDo } from "@/components/area-of-focus";
-import AwardWinningProjects from "@/components/AwwardProject";
+import DevTerminal from "@/components/DevTerminal";
 import ExperienceStory from "@/components/Experience";
 import Hero from "@/components/Hero";
-import { ProjectsSection } from "@/components/project/projects-section";
+import ProjectShowcase from "@/components/ProjectShowcase";
+import Services from "@/components/Services";
+import SkillsSection from "@/components/SkillsSection";
 import StorySection from "@/components/StorySection";
-import {DATA} from '@/data'
+import Testimonials from "@/components/Testimonials";
+import ContactSection from "@/components/ContactSection";
+import { DATA } from '@/data'
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <WhatIDo focusAreas={DATA.focusAreas} />
-      <ProjectsSection />
-      <AwardWinningProjects />
-      <StorySection/>
+      <ProjectShowcase />
+      <DevTerminal />
+      <Services />
+      <StorySection />
+      <SkillsSection />
       <ExperienceStory />
-      {/* <div className="h-screen"></div> */}
+      <Testimonials />
+      <ContactSection />
     </main>
   );
 }

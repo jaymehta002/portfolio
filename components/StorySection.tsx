@@ -1,47 +1,56 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { DATA } from "@/data";
 
 export default function StorySection() {
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.12 },
     },
   };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   const highlight =
     "text-zinc-100 font-semibold bg-gradient-to-r from-zinc-200/80 to-white bg-clip-text text-transparent";
 
   return (
-    <section className="w-full bg-black text-zinc-300 py-24">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="relative z-10 w-full bg-black text-zinc-300 py-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.15 }}
           className="space-y-10"
         >
+          {/* Label */}
+          <motion.p
+            variants={item}
+            className="text-xs uppercase tracking-widest text-zinc-500"
+          >
+            About Me
+          </motion.p>
+
           {/* Title */}
           <motion.h2
             variants={item}
-            className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-100"
+            className="text-4xl md:text-5xl font-light tracking-tight text-zinc-100"
           >
             The Journey So Far
           </motion.h2>
 
           {/* Story */}
           <motion.p variants={item} className="leading-relaxed text-lg">
-            I’m <span className={highlight}>Jay Mehta</span> — a{" "}
+            I&apos;m <span className={highlight}>Jay Mehta</span> — a{" "}
             <span className={highlight}>full-stack developer</span> who loves
-            turning ideas into real, scalable products. I’ve always been
+            turning ideas into real, scalable products. I&apos;ve always been
             fascinated by how simple lines of code can shape powerful digital
             experiences — from{" "}
             <span className={highlight}>
@@ -67,7 +76,7 @@ export default function StorySection() {
           </motion.p>
 
           <motion.p variants={item} className="leading-relaxed text-lg">
-            Whether I’m crafting an{" "}
+            Whether I&apos;m crafting an{" "}
             <span className={highlight}>admin panel</span> to simplify complex
             workflows, building{" "}
             <span className={highlight}>financial platforms</span> with deep
@@ -88,73 +97,58 @@ export default function StorySection() {
             be fast, intuitive, visually calm — and feel effortless.
           </motion.p>
 
+          {/* AI & GenAI */}
+          <motion.p variants={item} className="leading-relaxed text-lg">
+            More recently, I&apos;ve been deep in the{" "}
+            <span className={highlight}>AI &amp; generative AI</span> space —
+            building{" "}
+            <span className={highlight}>LLM-powered chatbots</span>,
+            integrating{" "}
+            <span className={highlight}>GPT-4 and Claude</span> into production
+            apps, designing{" "}
+            <span className={highlight}>RAG pipelines</span> with vector
+            databases, and crafting{" "}
+            <span className={highlight}>prompt systems</span> that turn raw
+            model output into genuinely useful features.
+          </motion.p>
+
           <motion.div variants={item}>
-            <hr className="border-zinc-800 my-8" />
+            <hr className="border-zinc-800 my-4" />
           </motion.div>
 
-          {/* What I Do */}
+          {/* Skills from DATA */}
           <motion.div variants={item} className="space-y-5">
-            <h3 className="text-2xl font-semibold text-zinc-100">
-              What I Love Building
-            </h3>
-
-            <ul className="space-y-3 text-lg">
-              <li>
-                🚀 <span className={highlight}>Full-stack products</span> — from
-                idea → architecture → deployment
-              </li>
-              <li>
-                🧠 <span className={highlight}>Scalable SaaS platforms</span>{" "}
-                with clean database design
-              </li>
-              <li>
-                🤖 <span className={highlight}>AI-led workflows</span> that
-                reduce friction &amp; unlock efficiency
-              </li>
-              <li>
-                🎯 <span className={highlight}>User-first experiences</span>{" "}
-                focused on clarity &amp; speed
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* Skills */}
-          <motion.div variants={item} className="space-y-5">
-            <h3 className="text-2xl font-semibold text-zinc-100">
-              Tools I Speak Fluently
+            <h3 className="text-xl font-medium text-zinc-100">
+              Tools I Work With
             </h3>
 
             <div className="flex flex-wrap gap-2">
-              {[
-                "Next.js",
-                "React",
-                "TypeScript",
-                "Node.js",
-                "Prisma",
-                "PostgreSQL",
-                "MongoDB",
-                "Firebase",
-                "Stripe",
-                "TailwindCSS",
-                "framer-motion",
-              ].map((s) => (
-                <span
+              {DATA.skills.map((s, i) => (
+                <motion.span
                   key={s}
-                  className="px-3 py-1 rounded-full border border-zinc-700 bg-zinc-900/50 text-zinc-200 text-sm"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.25, delay: i * 0.025 }}
+                  whileHover={{
+                    scale: 1.05,
+                    borderColor: "rgba(161,161,170,0.4)",
+                  }}
+                  className="px-3 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/40 text-zinc-300 text-sm transition-all cursor-default"
                 >
                   {s}
-                </span>
+                </motion.span>
               ))}
             </div>
           </motion.div>
 
           {/* Closing */}
           <motion.p variants={item} className="leading-relaxed text-lg pt-4">
-            If you’re building something meaningful —{" "}
+            If you&apos;re building something meaningful —{" "}
             <span className={highlight}>
-              I’d love to help bring it to life
+              I&apos;d love to help bring it to life
             </span>
-            . Let’s collaborate, experiment, and ship products that make a
+            . Let&apos;s collaborate, experiment, and ship products that make a
             difference.
           </motion.p>
         </motion.div>
